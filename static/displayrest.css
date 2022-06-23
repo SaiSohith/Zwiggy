@@ -1,0 +1,21 @@
+.align {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 20px;
+}
+
+body {
+  background: #ddd;
+}
+.form-control-borderless {
+  border: none;
+}
+
+.form-control-borderless:hover,
+.form-control-borderless:active,
+.form-control-borderless:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}

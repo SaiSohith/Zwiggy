@@ -1,0 +1,63 @@
+{% extends "header.html" %} {% load static %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+      integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'home.css' %}" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Home Alternate</title>
+    <style>
+      .back {
+        background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div
+      class="back"
+      style="display: flex; padding: 20vh; align-content: space-evenly"
+    >
+      <div class="card mb-3">
+        <a href="foodview">
+          <img
+            src="{% static 'images\image_2021-05-18_13-02-04.png' %}"
+            class="card-img-top"
+            alt="..."
+          />
+        </a>
+        <div class="card-body">
+          <h3 class="card-title">Explore Restaurants</h3>
+          <p class="card-text">Order and book your table for a restaurant</p>
+        </div>
+      </div>
+      <div class="card mb-3" style="margin-left: 50vh">
+        <a href="foodview">
+          <img
+            src="{% static 'images\image_2021-05-18_13-02-09.png' %}"
+            class="card-img-top"
+            alt="..."
+        /></a>
+        <div class="card-body">
+          <h3 class="card-title">Explore Hotels</h3>
+          <p class="card-text">Book rooms in your Favourite Hotel</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+{% endblock %}

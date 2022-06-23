@@ -1,0 +1,99 @@
+{% extends 'header.html' %} {% load static %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant details</title>
+    <style>
+      .alignimganddetails {
+        display: flex;
+        /* border: 2px solid black; */
+        justify-content: space-evenly;
+        margin: 10vh;
+      }
+      /* .alignimganddetails > div {
+    
+      } */
+      .back {
+        background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="back">
+    <div>
+      <div class="alignimganddetails">
+        <img
+          src="https://post.healthline.com/wp-content/uploads/2020/07/pizza-beer-1200x628-facebook-1200x628.jpg"
+          alt=""
+          style="width: 60vh"
+        />
+        <div style="width: 60vh">
+          <h3>Details</h3>
+          {% for i in data %}
+          <p>{{i}}</p>
+          {% endfor %}
+        </div>
+      </div>
+      <!-- <form action="booktable" method="post">
+      <input type="submit" value="order food" name="orderfood" />
+      <input type="submit" value="book table" name="booktable" />
+    </form> -->
+      <div class="alignimganddetails">
+        <div>
+          <h3>Book Your Table</h3>
+          {% if rest_name %}
+          <form action="/updatebooktable/{{rest_name}}" method="POST">
+            {% csrf_token %}
+            <table>
+              {{tbook.as_table}}
+            </table>
+            <!-- <input type="text" value="{{data.}}"  hidd/> -->
+
+            <input
+              type="submit"
+              value="Update"
+              name="booktable"
+              class="btn btn-dark"
+            />
+          </form>
+          {% else %}
+          <form action="{% url 'booktable' %}" method="POST">
+            {% csrf_token %}
+            <table>
+              {{tbook.as_table}}
+            </table>
+            <!-- <input type="text" value="{{data.}}"  hidd/> -->
+
+            <input
+              type="submit"
+              value="Book"
+              name="booktable"
+              class="btn btn-dark"
+            />
+          </form>
+          {% endif %}
+        </div>
+        <div>
+          <h3>Order Your Food</h3>
+          <form action="{% url 'orderfood' %}" method="POST">
+            {% csrf_token %}
+            <table>
+              {{foorder.as_table}}
+            </table>
+            <input
+              type="submit"
+              value="Order"
+              name="orderfood"
+              class="btn btn-dark"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+{% endblock %}

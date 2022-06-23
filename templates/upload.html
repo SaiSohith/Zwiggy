@@ -1,0 +1,6 @@
+{% block body %}
+<form action="upload" enctype="multipart/form-data" method="POST">
+  {% csrf_token %} {{ form.as_p }}
+  <input type="submit" value="Upload" />
+</form>
+<img src="/media/profileimgs/Screenshot_5.png" alt="" /> {% endblock %}

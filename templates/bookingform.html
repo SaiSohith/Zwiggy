@@ -1,0 +1,15 @@
+{% extends 'header.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'bookingform.css' %}" />
+<div class="align">
+  <h1>Book Your Table</h1>
+
+  <form style="width: 300px; margin: auto" action="displayform" method="POST">
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <input type="submit" value="submit" />
+  </form>
+</div>
+
+{% endblock %}

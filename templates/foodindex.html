@@ -1,0 +1,138 @@
+{% extends 'header.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Food Order Card UI Design</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/foodstyle.css' %}"
+    />
+  </head>
+  <body>
+<style>
+        .align {
+        margin: 20px;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        gap: 20px;
+      }
+</style>
+    <section class="main-content">
+      <div >
+        <h1 class="text-center text-uppercase">Food Order Card</h1>
+  
+        
+        <div class="row" style="display: flex;">
+          {% for i in d %}
+          <div  class="col-sm-4 " >
+            <div
+              class="food-card bg-white rounded-lg overflow-hidden mb-4 shadow"
+            >
+              <div class="food-card_img position-relative">
+                <img src="{% static 'images/food2.jpg'%}" alt="" />
+                <a href="#!"><i class="far fa-heart"></i></a>
+              </div>
+              <div class="food-card_content">
+                <div class="food-card_title-section overflow-hidden">
+                  <h4 class="food-card_title">
+                    <a href="#!" class="text-dark"
+                      >Double Cheese Potato Burger</a
+                    >
+                  </h4>
+                  <div class="d-flex justify-content-between">
+                    <a href="#!" class="food-card_author">Burger</a>
+                    <div class="rating-box">
+                      <div
+                        class="
+                          rating-stars
+                          d-inline-block
+                          position-relative
+                          mr-2
+                        "
+                      >
+                        <img src="{% static 'images/grey-star.svg'%}" alt="" />
+                        <div class="filled-star" style="width: 86%"></div>
+                      </div>
+                      <a href="#!" class="text-muted"
+                        ><small>2,144 Reviews</small></a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="food-card_bottom-section">
+                  <div class="d-flex justify-content-between">
+                    <div><span class="fa fa-fire"></span> 220 - 280 Kcal</div>
+                    <div>
+                      <span class="badge badge-success">Veg</span>
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="d-flex justify-content-between">
+                    <div class="food-card_price">
+                      <span>5.99$</span>
+                    </div>
+                    <div class="food-card_order-count">
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <button
+                            class="btn btn-outline-secondary minus-btn"
+                            type="button"
+                            id="button-addon1"
+                          >
+                            <i class="fa fa-minus"></i>
+                          </button>
+                        </div>
+                        <input
+                          type="text"
+                          class="form-control input-manulator"
+                          placeholder=""
+                          aria-label="Example text with button addon"
+                          aria-describedby="button-addon1"
+                          value="0"
+                        />
+                        <div class="input-group-append">
+                          <button
+                            class="btn btn-outline-secondary add-btn"
+                            type="button"
+                            id="button-addon1"
+                          >
+                            <i class="fa fa-plus"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+         
+            </div>
+          </div>
+          {% endfor	 %}
+        </div>
+        
+      </div>
+    </section>
+
+  </body>
+</html>
+
+{% endblock %}

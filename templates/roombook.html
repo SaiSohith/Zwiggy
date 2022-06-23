@@ -1,0 +1,22 @@
+{% extends 'header.html' %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center>
+      <h1>Hotel Room Booking Form</h1>
+      <form action="" style="height: 60vh; width: 80vh">
+        <table>
+          {{rform.as_table}}
+        </table>
+        <input type="submit" class="btn btn-dark" />
+      </form>
+    </center>
+  </body>
+</html>
+{% endblock %}
